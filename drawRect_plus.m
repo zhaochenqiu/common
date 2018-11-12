@@ -11,6 +11,20 @@ end
 
 [row column byte] = size(image);
 
+% covert the gray image to rgb image for showing the color of rectangle
+if byte == 1
+    temp = zeros(row, column, 3);
+
+    for i = 1:3
+        temp(:, :, i) = image;
+    end
+
+    image = temp;
+end
+
+[row column byte] = size(image);
+
+
 compare = round(linewidth/2);
 re_image = image;
 
